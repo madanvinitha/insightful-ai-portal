@@ -61,6 +61,8 @@ export default {
 				'gradient-elegant': 'var(--gradient-elegant)',
 				'gradient-subtle': 'var(--gradient-subtle)',
 				'gradient-accent': 'var(--gradient-accent)',
+				'gradient-shiny': 'var(--gradient-shiny)',
+				'gradient-wire': 'var(--gradient-wire)',
 			},
 			boxShadow: {
 				'elegant': 'var(--shadow-elegant)',

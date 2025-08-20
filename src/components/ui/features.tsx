@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
+import FlowDiagram from "@/components/ui/flow-diagram"
 import { 
   Network, 
   Gauge, 
@@ -9,7 +10,6 @@ import {
   Lock,
   Globe
 } from "lucide-react"
-import featuresImage from "@/assets/ai-gateway-features.webp"
 
 const Features = () => {
   const features = [
@@ -78,50 +78,8 @@ const Features = () => {
           ))}
         </div>
 
-        {/* AI Gateway Architecture Visual */}
-        <div className="relative">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold hero-text mb-4">
-              How AI Gateway Works
-            </h3>
-            <p className="text-lg text-muted-foreground">
-              Seamless integration between your applications and AI providers
-            </p>
-          </div>
-          
-          <div className="relative max-w-5xl mx-auto">
-            <div className="card-elegant p-8 rounded-2xl">
-              <img 
-                src={featuresImage} 
-                alt="AI Gateway Architecture showing request flow from applications through the gateway to various AI providers"
-                className="w-full h-auto rounded-xl"
-              />
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div className="p-4">
-                  <div className="w-10 h-10 bg-gradient-accent rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <span className="text-white font-bold">1</span>
-                  </div>
-                  <h4 className="font-semibold mb-2">Request Received</h4>
-                  <p className="text-sm text-muted-foreground">Your application sends AI requests through our gateway</p>
-                </div>
-                <div className="p-4">
-                  <div className="w-10 h-10 bg-gradient-accent rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <span className="text-white font-bold">2</span>
-                  </div>
-                  <h4 className="font-semibold mb-2">Intelligent Routing</h4>
-                  <p className="text-sm text-muted-foreground">Smart routing to optimal AI providers based on performance</p>
-                </div>
-                <div className="p-4">
-                  <div className="w-10 h-10 bg-gradient-accent rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <span className="text-white font-bold">3</span>
-                  </div>
-                  <h4 className="font-semibold mb-2">Response Delivered</h4>
-                  <p className="text-sm text-muted-foreground">Optimized responses returned with full monitoring</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Interactive Flow Diagram */}
+        <FlowDiagram />
       </div>
     </section>
   )

@@ -38,10 +38,12 @@ All colors MUST be HSL.
     --input: 0 0% 12%;
     --ring: 0 0% 70%;
 
-    /* Sophisticated Gradients */
-    --gradient-elegant: linear-gradient(135deg, hsl(0 0% 8%) 0%, hsl(0 0% 4%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 6%) 0%, hsl(0 0% 3%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(0 0% 15%) 0%, hsl(0 0% 8%) 100%);
+    /* Sophisticated Gradients - More Visible */
+    --gradient-elegant: linear-gradient(135deg, hsl(0 0% 12%) 0%, hsl(0 0% 4%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 8%) 0%, hsl(0 0% 2%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(270 100% 25%) 0%, hsl(240 100% 20%) 100%);
+    --gradient-shiny: linear-gradient(135deg, hsl(0 0% 95%) 0%, hsl(0 0% 70%) 50%, hsl(0 0% 95%) 100%);
+    --gradient-wire: linear-gradient(90deg, hsl(270 100% 50%) 0%, hsl(240 100% 40%) 100%);
     
     /* Modern Shadows */
     --shadow-elegant: 0 25px 50px -12px hsl(0 0% 0% / 0.6);
@@ -104,13 +106,22 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* Hero Text Effects */
+  /* Hero Text Effects - More Visible Gradients */
   .hero-text {
-    @apply bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent;
+    background: var(--gradient-shiny);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px hsl(0 0% 100% / 0.3);
   }
 
   .hero-accent {
-    @apply font-bold bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent;
+    @apply font-bold;
+    background: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(270 100% 80%) 50%, hsl(0 0% 100%) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 40px hsl(270 100% 50% / 0.4);
   }
 
   /* Interactive Elements */

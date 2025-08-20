@@ -11,7 +11,7 @@ const Hero = () => {
       <div className="relative max-w-6xl mx-auto text-center animate-fade-in">
         {/* Main Headlines */}
         <div className="mb-8">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             <span className="hero-text">BUILD</span>
             <br />
             <span className="hero-accent">your AI Gateway</span>
