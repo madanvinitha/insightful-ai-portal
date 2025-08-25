@@ -4,12 +4,19 @@ import { useState, useEffect } from "react"
 
 const Hero = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(false)
   const rotatingTexts = ["AI Gateway", "AI Hub", "AI Platform"]
   
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTextIndex((prev) => (prev + 1) % rotatingTexts.length)
-    }, 2000) // Change every 2 seconds
+      setIsTransitioning(true)
+      
+      // Wait for fade-out, then change text and fade-in
+      setTimeout(() => {
+        setCurrentTextIndex((prev) => (prev + 1) % rotatingTexts.length)
+        setIsTransitioning(false)
+      }, 300) // 300ms delay for smooth transition
+    }, 3000) // Change every 3 seconds for better readability
     
     return () => clearInterval(interval)
   }, [])
@@ -24,7 +31,7 @@ const Hero = () => {
         <div className="mb-8">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             <span className="hero-text">Beyond an </span>
-            <span className="hero-accent rotating-text">
+            <span className={`hero-accent rotating-text ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
               {rotatingTexts[currentTextIndex]}
             </span>
           </h1>
