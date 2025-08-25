@@ -89,50 +89,38 @@ const FlowDiagram = () => {
             
             <div className="relative">
               {/* Main Gateway Card */}
-              <Card className="card-elegant border-2 border-gradient-wire shadow-2xl transform hover:scale-105 transition-all duration-500 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-accent/5"></div>
-                <CardContent className="p-8 relative z-10">
-                  <div className="text-center mb-8">
-                    <div className="relative w-20 h-20 bg-gradient-accent rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-glow">
-                      <Brain className="h-10 w-10 text-white animate-pulse" />
-                      <div className="absolute inset-0 bg-gradient-accent rounded-3xl animate-glow opacity-50"></div>
+              <Card className="card-elegant border-2 border-purple-500/50 shadow-2xl transform hover:scale-105 transition-all duration-500">
+                <CardContent className="p-8">
+                  <div className="text-center mb-6">
+                    <div className="w-16 h-16 bg-gradient-accent rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <Brain className="h-8 w-8 text-white" />
                     </div>
-                    <h5 className="text-2xl font-bold hero-text mb-2">Intelligent Router</h5>
-                    <div className="w-16 h-1 bg-gradient-wire mx-auto rounded-full animate-glow"></div>
+                    <h5 className="text-xl font-bold text-foreground">Intelligent Router</h5>
                   </div>
                   
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="text-center p-4 bg-gradient-to-br from-accent/40 to-accent/20 rounded-xl border border-border/30 hover:border-border/60 transition-all duration-300 hover:scale-105">
-                      <div className="w-10 h-10 bg-gradient-accent rounded-lg flex items-center justify-center mx-auto mb-3">
-                        <Shield className="h-5 w-5 text-white" />
-                      </div>
-                      <div className="text-sm font-medium text-foreground">Security</div>
+                    <div className="text-center p-3 bg-accent/30 rounded-lg">
+                      <Shield className="h-6 w-6 text-blue-400 mx-auto mb-2" />
+                      <div className="text-xs text-foreground">Security</div>
                     </div>
-                    <div className="text-center p-4 bg-gradient-to-br from-accent/40 to-accent/20 rounded-xl border border-border/30 hover:border-border/60 transition-all duration-300 hover:scale-105">
-                      <div className="w-10 h-10 bg-gradient-accent rounded-lg flex items-center justify-center mx-auto mb-3">
-                        <Zap className="h-5 w-5 text-white" />
-                      </div>
-                      <div className="text-sm font-medium text-foreground">Speed</div>
+                    <div className="text-center p-3 bg-accent/30 rounded-lg">
+                      <Zap className="h-6 w-6 text-yellow-400 mx-auto mb-2" />
+                      <div className="text-xs text-foreground">Speed</div>
                     </div>
-                    <div className="text-center p-4 bg-gradient-to-br from-accent/40 to-accent/20 rounded-xl border border-border/30 hover:border-border/60 transition-all duration-300 hover:scale-105">
-                      <div className="w-10 h-10 bg-gradient-accent rounded-lg flex items-center justify-center mx-auto mb-3">
-                        <BarChart3 className="h-5 w-5 text-white" />
-                      </div>
-                      <div className="text-sm font-medium text-foreground">Analytics</div>
+                    <div className="text-center p-3 bg-accent/30 rounded-lg">
+                      <BarChart3 className="h-6 w-6 text-green-400 mx-auto mb-2" />
+                      <div className="text-xs text-foreground">Analytics</div>
                     </div>
-                    <div className="text-center p-4 bg-gradient-to-br from-accent/40 to-accent/20 rounded-xl border border-border/30 hover:border-border/60 transition-all duration-300 hover:scale-105">
-                      <div className="w-10 h-10 bg-gradient-accent rounded-lg flex items-center justify-center mx-auto mb-3">
-                        <ArrowRight className="h-5 w-5 text-white" />
-                      </div>
-                      <div className="text-sm font-medium text-foreground">Routing</div>
+                    <div className="text-center p-3 bg-accent/30 rounded-lg">
+                      <ArrowRight className="h-6 w-6 text-purple-400 mx-auto mb-2" />
+                      <div className="text-xs text-foreground">Routing</div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
               
-              {/* Enhanced Pulse Effects */}
-              <div className="absolute -inset-4 bg-gradient-wire rounded-3xl blur-2xl animate-glow opacity-30"></div>
-              <div className="absolute -inset-2 bg-gradient-accent/20 rounded-2xl blur-xl animate-pulse"></div>
+              {/* Pulse Effect */}
+              <div className="absolute -inset-2 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-2xl blur-xl animate-glow"></div>
             </div>
           </div>
 
