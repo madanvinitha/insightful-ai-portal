@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 const Hero = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
-  const rotatingTexts = ["AI Gateway", "AI Hub", "AI Platform"]
+  const rotatingTexts = ["AI Gateway", "AI Engine", "AI Platform"]
   
   useEffect(() => {
     const interval = setInterval(() => {
