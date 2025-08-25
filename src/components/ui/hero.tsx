@@ -30,11 +30,8 @@ const Hero = () => {
         {/* Main Headlines */}
         <div className="mb-8">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            <span className="hero-text">Beyond an </span>
-            <span className="relative inline-block min-w-[300px] sm:min-w-[400px] md:min-w-[500px] lg:min-w-[600px] text-left">
-              <span className={`hero-accent rotating-text ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
-                {rotatingTexts[currentTextIndex]}
-              </span>
+            <span className="hero-text">Beyond an </span><span className={`hero-accent rotating-text ${isTransitioning ? 'fade-out' : 'fade-in'}`}>
+              {rotatingTexts[currentTextIndex]}
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
