@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 
 const Hero = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0)
-  const rotatingTexts = ["Beyond an", "AI Gateway", "AI Hub", "AI Platform"]
+  const rotatingTexts = ["AI Gateway", "AI Hub", "AI Platform"]
   
   useEffect(() => {
     const interval = setInterval(() => {
@@ -23,6 +23,7 @@ const Hero = () => {
         {/* Main Headlines */}
         <div className="mb-8">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <span className="hero-text">Beyond an </span>
             <span className="hero-accent rotating-text">
               {rotatingTexts[currentTextIndex]}
             </span>
