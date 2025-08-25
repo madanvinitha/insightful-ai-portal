@@ -1,7 +1,18 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Zap, Shield, BarChart3 } from "lucide-react"
+import { useState, useEffect } from "react"
 
 const Hero = () => {
+  const [currentTextIndex, setCurrentTextIndex] = useState(0)
+  const rotatingTexts = ["Beyond an", "AI Gateway", "AI Hub", "AI Platform"]
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTextIndex((prev) => (prev + 1) % rotatingTexts.length)
+    }, 2000) // Change every 2 seconds
+    
+    return () => clearInterval(interval)
+  }, [])
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
       {/* Background Elements */}
@@ -12,9 +23,9 @@ const Hero = () => {
         {/* Main Headlines */}
         <div className="mb-8">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            <span className="hero-text">BUILD</span>
-            <br />
-            <span className="hero-accent">your AI Gateway</span>
+            <span className="hero-accent rotating-text">
+              {rotatingTexts[currentTextIndex]}
+            </span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Intelligent API management that routes, monitors, and optimizes your AI integrations. 
