@@ -128,9 +128,9 @@ All colors MUST be HSL.
   .rotating-text {
     display: inline-block;
     position: relative;
-    height: 1em;
+    height: 1.2em;
     overflow: hidden;
-    vertical-align: bottom;
+    vertical-align: baseline;
   }
 
   .rotating-words {
@@ -140,8 +140,10 @@ All colors MUST be HSL.
   }
 
   .rotating-words div {
-    line-height: 1em;
-    height: 1em;
+    line-height: 1.2em;
+    height: 1.2em;
+    display: flex;
+    align-items: center;
   }
 
   @keyframes slideWords {
