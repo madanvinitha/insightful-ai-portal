@@ -3,23 +3,7 @@ import { ArrowRight, Zap, Shield, BarChart3 } from "lucide-react"
 import { useState, useEffect } from "react"
 
 const Hero = () => {
-  const [currentTextIndex, setCurrentTextIndex] = useState(0)
-  const [isTransitioning, setIsTransitioning] = useState(false)
   const rotatingTexts = ["AI Gateway", "AI Engine", "AI Platform"]
-  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsTransitioning(true)
-      
-      // Wait for fade-out, then change text and fade-in
-      setTimeout(() => {
-        setCurrentTextIndex((prev) => (prev + 1) % rotatingTexts.length)
-        setIsTransitioning(false)
-      }, 300) // 300ms delay for smooth transition
-    }, 3000) // Change every 3 seconds for better readability
-    
-    return () => clearInterval(interval)
-  }, [])
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
       {/* Background Elements */}
