@@ -1,24 +1,14 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, Shield, BarChart3 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button"
+import { ArrowRight, Zap, Shield, BarChart3 } from "lucide-react"
+import { useState, useEffect } from "react"
 
 const Hero = () => {
-  const rotatingTexts = ["AI Gateway", "AI Engine", "AI Platform", "AI Solution"];
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % rotatingTexts.length);
-    }, 2250); // 9s / 4 texts = 2.25s per text
-
-    return () => clearInterval(interval);
-  }, [rotatingTexts.length]);
-
+  const rotatingTexts = ["AI Gateway", "AI Engine", "AI Platform"]
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-accent/20" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-white/5 to-transparent rounded-full animate-glow" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-white/5 to-transparent rounded-full blur-3xl animate-glow" />
       
       <div className="relative max-w-6xl mx-auto text-center animate-fade-in">
         {/* Main Headlines */}
@@ -85,7 +75,7 @@ const Hero = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

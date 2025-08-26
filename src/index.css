@@ -112,42 +112,40 @@ All colors MUST be HSL.
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 5px hsl(0 0% 100% / 0.05); /* Minimal shadow */
+    text-shadow: 0 0 10px hsl(0 0% 100% / 0.1); /* Reduced shadow intensity */
   }
 
   .hero-accent {
     @apply font-bold;
-    color: hsl(0 0% 100%); /* Simple white color for crisp text */
+    background: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(270 100% 80%) 50%, hsl(0 0% 100%) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px hsl(270 100% 50% / 0.2); /* Reduced shadow intensity */
   }
 
-  /* Special class for rotating text without gradient effects */
-  .rotating-text .hero-accent {
-    background: none;
-    -webkit-background-clip: unset;
-    -webkit-text-fill-color: unset;
-    text-shadow: none;
-    color: hsl(0 0% 100%);
-  }
-
-  /* Rotating text animation with smooth sliding - Fixed for consistent width */
+  /* Rotating text animation with smooth sliding */
   .rotating-text {
     display: inline-block;
     position: relative;
-    height: 1.2em;
+    height: 1em;
     overflow: hidden;
-    vertical-align: bottom;
-    min-width: 200px; /* Fixed width to prevent layout shifts */
+    vertical-align: baseline;
+    width: auto;
+    min-width: 200px;
   }
 
   .rotating-words {
     display: block;
     height: 100%;
-    animation: slideWords 9s infinite ease-in-out;
+    animation: slideWords 9s infinite;
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 
   .rotating-words div {
-    line-height: 1.2em;
-    height: 1.2em;
+    line-height: 1em;
+    height: 1em;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -155,43 +153,12 @@ All colors MUST be HSL.
 
   @keyframes slideWords {
     0% { transform: translateY(0%); }
-    20% { transform: translateY(0%); }
-    25% { transform: translateY(-100%); }
-    45% { transform: translateY(-100%); }
-    50% { transform: translateY(-200%); }
-    70% { transform: translateY(-200%); }
-    75% { transform: translateY(-300%); }
-    95% { transform: translateY(-300%); }
+    25% { transform: translateY(0%); }
+    33.33% { transform: translateY(-100%); }
+    58.33% { transform: translateY(-100%); }
+    66.66% { transform: translateY(-200%); }
+    91.66% { transform: translateY(-200%); }
     100% { transform: translateY(0%); }
-  }
-
-  /* Background Glow Animation */
-  .animate-glow {
-    animation: glow 8s infinite alternate;
-  }
-
-  @keyframes glow {
-    0% { opacity: 0.3; }
-    100% { opacity: 0.6; }
-  }
-
-  /* Remove blur from background */
-  .animate-fade-in {
-    animation: fadeIn 1s ease-out forwards;
-  }
-
-  @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-
-  .animate-slide-up {
-    animation: slideUp 0.5s ease-out forwards;
-  }
-
-  @keyframes slideUp {
-    0% { transform: translateY(20px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
   }
 
   /* Interactive Elements */
