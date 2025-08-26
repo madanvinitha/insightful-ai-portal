@@ -124,36 +124,34 @@ All colors MUST be HSL.
     text-shadow: 0 0 40px hsl(270 100% 50% / 0.4);
   }
 
-  /* Rotating text animation with smooth transitions */
+  /* Rotating text animation with smooth sliding */
   .rotating-text {
     display: inline-block;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    height: 1em;
+    overflow: hidden;
+    vertical-align: bottom;
   }
 
-  .rotating-text.fade-in {
-    opacity: 1;
-    transform: translateY(0px) scale(1);
-    animation: smoothFadeIn 0.5s ease-out;
+  .rotating-words {
+    display: block;
+    height: 100%;
+    animation: slideWords 9s infinite;
   }
 
-  .rotating-text.fade-out {
-    opacity: 0;
-    transform: translateY(-10px) scale(0.95);
+  .rotating-words div {
+    line-height: 1em;
+    height: 1em;
   }
 
-  @keyframes smoothFadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(15px) scale(0.95);
-    }
-    50% {
-      opacity: 0.5;
-      transform: translateY(5px) scale(0.98);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0px) scale(1);
-    }
+  @keyframes slideWords {
+    0% { transform: translateY(0%); }
+    25% { transform: translateY(0%); }
+    33.33% { transform: translateY(-100%); }
+    58.33% { transform: translateY(-100%); }
+    66.66% { transform: translateY(-200%); }
+    91.66% { transform: translateY(-200%); }
+    100% { transform: translateY(0%); }
   }
 
   /* Interactive Elements */
