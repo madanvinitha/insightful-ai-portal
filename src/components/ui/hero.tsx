@@ -3,7 +3,16 @@ import { ArrowRight, Zap, Shield, BarChart3 } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const Hero = () => {
-  const rotatingTexts = ["AI Gateway", "AI Engine", "AI Platform"];
+  const rotatingTexts = ["AI Gateway", "AI Engine", "AI Platform", "AI Solution"];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % rotatingTexts.length);
+    }, 2250); // 9s / 4 texts = 2.25s per text
+
+    return () => clearInterval(interval);
+  }, [rotatingTexts.length]);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
