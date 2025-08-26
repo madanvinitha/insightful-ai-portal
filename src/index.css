@@ -112,7 +112,7 @@ All colors MUST be HSL.
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 10px hsl(0 0% 100% / 0.1); /* Reduced shadow intensity */
+    text-shadow: 0 0 5px hsl(0 0% 100% / 0.05); /* Minimal shadow */
   }
 
   .hero-accent {
@@ -121,34 +121,29 @@ All colors MUST be HSL.
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 15px hsl(270 100% 50% / 0.2); /* Reduced shadow intensity */
+    text-shadow: 0 0 10px hsl(270 100% 50% / 0.1); /* Minimal shadow */
   }
 
   /* Rotating text animation with smooth sliding */
   .rotating-text {
     display: inline-block;
     position: relative;
-    height: 1em;
+    height: 1.2em;
     overflow: hidden;
     vertical-align: baseline;
-    width: auto;
-    min-width: 200px;
   }
 
   .rotating-words {
     display: block;
     height: 100%;
-    animation: slideWords 9s infinite;
-    transform: translateZ(0);
-    backface-visibility: hidden;
+    animation: slideWords 9s infinite ease-in-out;
   }
 
   .rotating-words div {
-    line-height: 1em;
-    height: 1em;
+    line-height: 1.2em;
+    height: 1.2em;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
   }
 
   @keyframes slideWords {
@@ -159,6 +154,35 @@ All colors MUST be HSL.
     66.66% { transform: translateY(-200%); }
     91.66% { transform: translateY(-200%); }
     100% { transform: translateY(0%); }
+  }
+
+  /* Background Glow Animation */
+  .animate-glow {
+    animation: glow 8s infinite alternate;
+  }
+
+  @keyframes glow {
+    0% { opacity: 0.3; }
+    100% { opacity: 0.6; }
+  }
+
+  /* Remove blur from background */
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  @keyframes slideUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
   }
 
   /* Interactive Elements */
